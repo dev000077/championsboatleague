@@ -20,7 +20,7 @@ const schedules = [
 ];
 
 const points = [
-  {club:"AROMA", points:10},
+  {club:"AROMA-I (Aroma Boat Club) ", points:10},
   {club:"MELPPADAM", points:9},
   {club:"NIRANAM", points:8},
   {club:"VEEYAPURAM", points:7},
