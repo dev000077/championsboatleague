@@ -23,11 +23,11 @@ const points = [
   {club:"AROMA-I (Aroma Boat Club) ", points:10},
   {club:"MELPADOM(Pallathuruthy Boat Club)", points:9},
   {club:"NIRANAM(Niranam Boat Club)", points:8},
-  {club:"VEEYAPURAM", points:7},
-  {club:"ARPOKKARA", points:6},
+  {club:"VEEYAPURAM(UBC FC Kainakary)", points:7},
+  {club:"ARPOOKARA", points:6},
   {club:"CHERUTHANA", points:5},
-  {club:"PUNYALALAN", points:4},
-  {club:"NADUBHAGAM", points:3},
+  {club:"PUNYALALAN NIRANAM", points:4},
+  {club:"NADUBHAGAM(Punnamada Boat Club)", points:3},
   {club:"THALAVADI", points:2}
 ];
 
