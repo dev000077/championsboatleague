@@ -246,7 +246,7 @@ function renderPoints() {
     body.insertAdjacentHTML("beforeend", `<tr>
       <td><span class="rank">${i+1}</span></td>
       <td><strong>${p.club}</strong></td>
-      <td class="pts">${p.points} Points</td>
+      <td class="pts">${p.points}</td>
     </tr>`);
   });
 }
