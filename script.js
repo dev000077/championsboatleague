@@ -160,7 +160,7 @@ function renderHistory() {
   const season = history[historyYear];
   document.getElementById("historySummary").innerHTML = `
     <div><span class="eyebrow">SEASON ${historyYear}</span><strong>${season.champion}</strong><span>${season.club}</span></div>
-    <div class="history-count"><b>${season.matches.length}</b><small>archived matches</small></div>`;
+    <div class="history-count"><b>${season.matches.length}</b><small>Matches</small></div>`;
   document.getElementById("historyList").innerHTML = season.matches.map((m,i) => {
     const special = /Cancelled|abandoned/i.test(m[2]);
     return `<article class="history-match ${special?'special':''}">
