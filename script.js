@@ -133,7 +133,7 @@ let message="", title="NEXT VENUE";
 if(today>=0){
 const d=dateOnly(schedules[today].date);
 const start=new Date(d);start.setHours(14,30,0,0);
-const end=new Date(d);end.setHours(18,0,0,0);
+const end=new Date(d);end.setHours(18,40,0,0);
 if(now>=start&&now<end){
 title="LIVE NOW";
 message=`LIVE NOW • ${schedules[today].venue} • ${formatDate(schedules[today].date)} • Champions Boat League 2026`;
