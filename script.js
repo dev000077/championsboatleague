@@ -33,7 +33,8 @@ const points=[
 
 const history={
 2026:{champion:"",club:"",matches:[
-[ "Karuvatta, Alappuzha","19 September ","Aroma-I","Aroma Boat Club"]
+[ "Karuvatta, Alappuzha","19 September ","Aroma-I","Aroma Boat Club"],
+["Kallada,Kollam","23 September ","Aroma-I","Aroma Boat Club"],
    ]},
 2025:{champion:"Veeyapuram",club:"Village Boat Club Kainakary (Pride Chasers) VBC",matches:[
 ["Kainakary, Alappuzha","19 September","Veeyapuram","Pride Chasers (VBC)"],
