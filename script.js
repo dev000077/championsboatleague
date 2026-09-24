@@ -6,36 +6,49 @@ const champions = {
 2019:{boat:"Nadubhagom",club:"Pallathuruthy Boat Club, Alappuzha (Tropical Titans)"}
 };
 
+/*
+  2026 DATA
+  Update ONLY the winner/club/points after each completed race.
+  The schedule, popup and points ranking use this data automatically.
+*/
 const schedules=[
-{venue:"Karuvatta, Alappuzha",date:"2026-09-19"},
-{venue:"Kallada, Kollam",date:"2026-09-23"},
-{venue:"Pandanadu, Chengannur, Alappuzha",date:"2026-09-26"},
-{venue:"Kottappuram, Thrissur",date:"2026-10-04"},
-{venue:"Piravom, Ernakulam",date:"2026-10-17"},
-{venue:"Thazhathangadi, Kottayam",date:"2026-10-24"},
-{venue:"Pulinkunnu, Alappuzha",date:"2026-10-31"},
-{venue:"Kainakary, Alappuzha",date:"2026-11-07"},
-{venue:"Kayamkulam, Alappuzha",date:"2026-11-14"},
-{venue:"President's Trophy, Kollam",date:"2026-11-21"}
+{venue:"Karuvatta, Alappuzha",date:"2026-09-19",winner:"Aroma-I",club:"Aroma Boat Club"},
+{venue:"Kallada, Kollam",date:"2026-09-23",winner:"Aroma-I",club:"Aroma Boat Club"},
+{venue:"Pandanadu, Chengannur, Alappuzha",date:"2026-09-26",winner:"",club:""},
+{venue:"Kottappuram, Thrissur",date:"2026-10-04",winner:"",club:""},
+{venue:"Piravom, Ernakulam",date:"2026-10-17",winner:"",club:""},
+{venue:"Thazhathangadi, Kottayam",date:"2026-10-24",winner:"",club:""},
+{venue:"Pulinkunnu, Alappuzha",date:"2026-10-31",winner:"",club:""},
+{venue:"Kainakary, Alappuzha",date:"2026-11-07",winner:"",club:""},
+{venue:"Kayamkulam, Alappuzha",date:"2026-11-14",winner:"",club:""},
+{venue:"President's Trophy, Kollam",date:"2026-11-21",winner:"",club:""}
 ];
 
 const points=[
-{club:"AROMA-I (Aroma Boat Club)",points:10},
-{club:"MELPADOM (Pallathuruthy Boat Club)",points:9},
-{club:"NIRANAM (Niranam Boat Club)",points:8},
-{club:"VEEYAPURAM (UBC FC Kainakary)",points:7},
-{club:"ARPOOKARA (Immanuel Boat Club)",points:6},
-{club:"CHERUTHANA (Nattakom Boat Club)",points:5},
-{club:"PUNYALALAN NIRANAM (Kumarakom Town Boat Club)",points:4},
-{club:"NADUBHAGAM (Punnamada Boat Club)",points:3},
-{club:"THALAVADI (Village Boat Club, Kainakary)",points:2}
+{club:"AROMA-I (Aroma Boat Club)",points:20},
+{club:"MELPADOM (Pallathuruthy Boat Club)",points:16},
+{club:"NIRANAM (Niranam Boat Club)",points:17},
+{club:"VEEYAPURAM (UBC FC Kainakary)",points:15},
+{club:"ARPOOKARA (Immanuel Boat Club)",points:10},
+{club:"CHERUTHANA (Nattakom Boat Club)",points:10},
+{club:"PUNYALALAN NIRANAM (Kumarakom Town Boat Club)",points:10},
+{club:"NADUBHAGAM (Punnamada Boat Club)",points:6},
+{club:"THALAVADI (Village Boat Club, Kainakary)",points:4}
 ];
 
 const history={
 2026:{champion:"",club:"",matches:[
-[ "Karuvatta, Alappuzha","19 September ","Aroma-I","Aroma Boat Club"],
-["Kallada,Kollam","23 September ","Aroma-I","Aroma Boat Club"],
-   ]},
+["Karuvatta, Alappuzha","19 September 2026","Aroma-I","Aroma Boat Club"],
+["Kallada, Kollam","23 September 2026","Aroma-I","Aroma Boat Club"],
+["Pandanadu, Chengannur, Alappuzha","26 September 2026","—","Winner not yet available"],
+["Kottappuram, Thrissur","04 October 2026","—","Winner not yet available"],
+["Piravom, Ernakulam","17 October 2026","—","Winner not yet available"],
+["Thazhathangadi, Kottayam","24 October 2026","—","Winner not yet available"],
+["Pulinkunnu, Alappuzha","31 October 2026","—","Winner not yet available"],
+["Kainakary, Alappuzha","07 November 2026","—","Winner not yet available"],
+["Kayamkulam, Alappuzha","14 November 2026","—","Winner not yet available"],
+["President's Trophy, Kollam","21 November 2026","—","Winner not yet available"]
+]},
 2025:{champion:"Veeyapuram",club:"Village Boat Club Kainakary (Pride Chasers) VBC",matches:[
 ["Kainakary, Alappuzha","19 September","Veeyapuram","Pride Chasers (VBC)"],
 ["Thazhathangadi, Kottayam","27 September","Veeyapuram","Pride Chasers (VBC)"],
@@ -106,6 +119,7 @@ function formatDate(iso){
 return new Intl.DateTimeFormat("en-IN",{day:"2-digit",month:"short",year:"numeric",timeZone:"Asia/Kolkata"}).format(new Date(iso+"T00:00:00"));
 }
 function dateOnly(iso){return new Date(iso+"T00:00:00");}
+
 function getStatus(iso){
 const now=new Date(), d=dateOnly(iso);
 const start=new Date(d); start.setHours(14,30,0,0);
@@ -115,12 +129,6 @@ if(now>=start)return["LIVE NOW","progress"];
 return["Upcoming","upcoming"];
 }
 
-/* Ticker:
-   - During a match day from 2:30 PM to 6:00 PM: show LIVE NOW + venue.
-   - From 6:00 PM onward: show NEXT VENUE.
-   - On non-match days: show the next upcoming venue.
-   - After the final match: hide ticker.
-*/
 function renderNextVenueTicker(){
 const ticker=document.getElementById("nextVenueTicker"), text=document.getElementById("nextVenueTickerText"), label=document.getElementById("tickerLabel");
 if(!ticker||!text)return;
@@ -165,40 +173,155 @@ grid.innerHTML=Object.entries(champions).sort((a,b)=>b[0]-a[0]).map(([year,w])=>
 
 function renderSchedule(){
 const list=document.getElementById("scheduleList");if(!list)return;
+
 list.innerHTML=schedules.map((m,i)=>{
 const [status,cls]=getStatus(m.date);
-return `<article class="match-card ${cls}">
+const hasResult=Boolean(m.winner);
+
+return `<article class="match-card ${cls} ${hasResult ? "has-result" : ""}"
+${hasResult ? `onclick="showMatchResult('${m.date}')"` : ""}
+${hasResult ? `role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')showMatchResult('${m.date}')"` : ""}>
+
 <div class="match-number">${String(i+1).padStart(2,"0")}</div>
-<div class="match-date"><span>${formatDate(m.date).split(" ")[0]}</span><strong>${formatDate(m.date).split(" ").slice(1).join(" ")}</strong></div>
-<div class="match-venue"><span>VENUE</span><h3>${m.venue}</h3><p>Champions Boat League 2026</p></div>
-<span class="status ${cls}"><i></i>${status}</span></article>`;
+
+<div class="match-date">
+<span>${formatDate(m.date).split(" ")[0]}</span>
+<strong>${formatDate(m.date).split(" ").slice(1).join(" ")}</strong>
+</div>
+
+<div class="match-venue">
+<span>VENUE</span>
+<h3>${m.venue}</h3>
+<p>Champions Boat League 2026</p>
+${hasResult ? `<small class="click-hint">Click to view winner →</small>` : ""}
+</div>
+
+<span class="status ${cls}"><i></i>${status}</span>
+</article>`;
 }).join("");
+}
+
+function showMatchResult(date){
+const result=schedules.find(m=>m.date===date);
+if(!result)return;
+
+let popup=document.getElementById("matchResultPopup");
+
+if(!popup){
+popup=document.createElement("div");
+popup.id="matchResultPopup";
+popup.innerHTML=`
+<div class="result-overlay" onclick="closeMatchResult()"></div>
+<div class="result-modal" role="dialog" aria-modal="true" aria-labelledby="resultVenue">
+<button class="result-close" onclick="closeMatchResult()" aria-label="Close">×</button>
+<span class="eyebrow">CBL 2026 MATCH RESULT</span>
+<h2 id="resultVenue"></h2>
+<div class="result-date" id="resultDate"></div>
+<div class="winner-result">
+<div class="result-trophy">🏆</div>
+<div class="result-label">MATCH WINNER</div>
+<h3 id="resultWinner"></h3>
+<p id="resultClub"></p>
+</div>
+</div>`;
+document.body.appendChild(popup);
+}
+
+document.getElementById("resultVenue").textContent=result.venue;
+document.getElementById("resultDate").textContent=formatDate(date);
+
+if(result.winner){
+document.getElementById("resultWinner").textContent=result.winner;
+document.getElementById("resultClub").textContent=result.club;
+}else{
+document.getElementById("resultWinner").textContent="Winner Not Yet Available";
+document.getElementById("resultClub").textContent="The result will be updated after the race.";
+}
+
+popup.classList.add("show");
+document.body.classList.add("modal-open");
+}
+
+function closeMatchResult(){
+const popup=document.getElementById("matchResultPopup");
+if(popup)popup.classList.remove("show");
+document.body.classList.remove("modal-open");
 }
 
 function renderPoints(){
 const body=document.getElementById("pointsBody");if(!body)return;
-body.innerHTML=[...points].sort((a,b)=>b.points-a.points).map((p,i)=>`
-<tr><td><span class="rank">${i+1}</span></td><td><strong>${p.club}</strong></td><td class="pts">${p.points}</td></tr>`).join("");
+
+const sortedPoints=[...points].sort((a,b)=>{
+if(b.points!==a.points)return b.points-a.points;
+return a.club.localeCompare(b.club);
+});
+
+body.innerHTML=sortedPoints.map((p,i)=>`
+<tr>
+<td><span class="rank">${i+1}</span></td>
+<td><strong>${p.club}</strong></td>
+<td class="pts">${p.points}</td>
+</tr>`).join("");
 }
 
 function renderHistoryPage(){
 const tabs=document.getElementById("historyTabs"), content=document.getElementById("historyContent");
 if(!tabs||!content)return;
 let year=Number(sessionStorage.getItem("cblHistoryYear"))||2025;
+
 const render=()=>{
-tabs.innerHTML=Object.keys(history).sort((a,b)=>b-a).map(y=>`<button class="${+y===year?"active":""}" data-year="${y}">${y}</button>`).join("");
+tabs.innerHTML=Object.keys(history).sort((a,b)=>b-a).map(y=>
+`<button class="${+y===year?"active":""}" data-year="${y}">${y}</button>`).join("");
+
 const s=history[year];
-content.innerHTML=`<div class="season-hero">
-<div><span class="eyebrow">SEASON ${year}</span><h2>${s.champion}</h2><p>${s.club}</p></div>
+
+const championTitle=s.champion || "2026 Season in Progress";
+const championClub=s.club || "Match winners will be added as races are completed.";
+
+content.innerHTML=`
+<div class="season-hero">
+<div><span class="eyebrow">SEASON ${year}</span><h2>${championTitle}</h2><p>${championClub}</p></div>
 <div class="season-stat"><strong>${s.matches.length}</strong><span>Recorded<br>Matches</span></div>
 </div>
-<div class="history-table-wrap"><div class="history-table-head"><span>#</span><span>Date</span><span>Venue</span><span>Winner</span><span>Winning Club / Result</span></div>
-${s.matches.map((m,i)=>{const special=/cancelled|abandoned/i.test(m[2]);return `<div class="history-row ${special?"special":""}">
-<span class="history-index">${String(i+1).padStart(2,"0")}</span><span>${m[1]}</span><strong>${m[0]}</strong><strong>${m[2]}</strong><span>${m[3]}</span></div>`}).join("")}</div>`;
-tabs.querySelectorAll("button").forEach(b=>b.onclick=()=>{year=Number(b.dataset.year);sessionStorage.setItem("cblHistoryYear",year);render();});
-};render();
+
+<div class="history-table-wrap">
+<div class="history-table-head"><span>#</span><span>Date</span><span>Venue</span><span>Winner</span><span>Winning Club / Result</span></div>
+${s.matches.map((m,i)=>{
+const special=/cancelled|abandoned|not yet/i.test(m[2]+" "+m[3]);
+return `<div class="history-row ${special?"special":""}">
+<span class="history-index">${String(i+1).padStart(2,"0")}</span>
+<span>${m[1]}</span>
+<strong>${m[0]}</strong>
+<strong>${m[2]}</strong>
+<span>${m[3]}</span>
+</div>`;
+}).join("")}
+</div>`;
+
+tabs.querySelectorAll("button").forEach(b=>b.onclick=()=>{
+year=Number(b.dataset.year);
+sessionStorage.setItem("cblHistoryYear",year);
+render();
+});
+};
+render();
 }
 
-document.querySelector(".menu-btn")?.addEventListener("click",()=>document.querySelector(".nav-links")?.classList.toggle("open"));
-renderWinner();renderSchedule();renderPoints();renderNextVenueTicker();renderHistoryPage();
-setInterval(()=>{renderSchedule();renderNextVenueTicker();},30000);
+document.querySelector(".menu-btn")?.addEventListener("click",()=>{
+document.querySelector(".nav-links")?.classList.toggle("open");
+});
+
+renderWinner();
+renderSchedule();
+renderPoints();
+renderNextVenueTicker();
+renderHistoryPage();
+
+setInterval(()=>{
+renderSchedule();
+renderNextVenueTicker();
+},30000);
+
+document.addEventListener("keydown",e=>{
+if(e.key==="Escape")closeMatchResult();
+});
