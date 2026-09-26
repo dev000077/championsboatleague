@@ -25,22 +25,22 @@ const schedules=[
 ];
 
 const points=[
-{club:"AROMA-I (Aroma Boat Club)",points:20},
-{club:"MELPADOM (Pallathuruthy Boat Club)",points:16},
-{club:"NIRANAM (Niranam Boat Club)",points:17},
-{club:"VEEYAPURAM (UBC FC Kainakary)",points:15},
-{club:"ARPOOKARA (Immanuel Boat Club)",points:10},
-{club:"CHERUTHANA (Nattakom Boat Club)",points:10},
-{club:"PUNYALALAN NIRANAM (Kumarakom Town Boat Club)",points:10},
-{club:"NADUBHAGAM (Punnamada Boat Club)",points:6},
-{club:"THALAVADI (Village Boat Club, Kainakary)",points:4}
+{club:"AROMA-I (Aroma Boat Club)",points:29},
+{club:"MELPADOM (Pallathuruthy Boat Club)",points:25},
+{club:"NIRANAM (Niranam Boat Club)",points:26},
+{club:"VEEYAPURAM (UBC FC Kainakary)",points:22},
+{club:"ARPOOKARA (Immanuel Boat Club)",points:15},
+{club:"CHERUTHANA (Nattakom Boat Club)",points:14},
+{club:"PUNYALALAN NIRANAM (Kumarakom Town Boat Club)",points:16},
+{club:"NADUBHAGAM (Punnamada Boat Club)",points:9},
+{club:"THALAVADI (Village Boat Club, Kainakary)",points:6}
 ];
 
 const history={
 2026:{champion:"",club:"",matches:[
 ["Karuvatta, Alappuzha","19 September 2026","Aroma-I","Aroma Boat Club"],
 ["Kallada, Kollam","23 September 2026","Aroma-I","Aroma Boat Club"],
-["Pandanadu, Chengannur, Alappuzha","26 September 2026","—","Winner not yet available"],
+["Pandanadu, Chengannur, Alappuzha","26 September 2026","—","Melppadom","Pallathuruthy Boat Club"],
 ["Kottappuram, Thrissur","04 October 2026","—","Winner not yet available"],
 ["Piravom, Ernakulam","17 October 2026","—","Winner not yet available"],
 ["Thazhathangadi, Kottayam","24 October 2026","—","Winner not yet available"],
