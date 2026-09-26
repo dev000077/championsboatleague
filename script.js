@@ -14,7 +14,7 @@ const champions = {
 const schedules=[
 {venue:"Karuvatta, Alappuzha",date:"2026-09-19",winner:"Aroma-I",club:"Aroma Boat Club"},
 {venue:"Kallada, Kollam",date:"2026-09-23",winner:"Aroma-I",club:"Aroma Boat Club"},
-{venue:"Pandanadu, Chengannur, Alappuzha",date:"2026-09-26",winner:"",club:""},
+{venue:"Pandanadu, Chengannur, Alappuzha",date:"2026-09-26",winner:"Melpadom",club:"Pallathuruthy Boat Club"},
 {venue:"Kottappuram, Thrissur",date:"2026-10-04",winner:"",club:""},
 {venue:"Piravom, Ernakulam",date:"2026-10-17",winner:"",club:""},
 {venue:"Thazhathangadi, Kottayam",date:"2026-10-24",winner:"",club:""},
