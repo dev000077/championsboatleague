@@ -40,7 +40,7 @@ const history={
 2026:{champion:"",club:"",matches:[
 ["Karuvatta, Alappuzha","19 September 2026","Aroma-I","Aroma Boat Club"],
 ["Kallada, Kollam","23 September 2026","Aroma-I","Aroma Boat Club"],
-["Pandanadu, Chengannur, Alappuzha","26 September 2026","—Melpadom","Pallathuruthy Boat Club"],
+["Pandanadu, Chengannur, Alappuzha","26 September 2026","Melpadom","Pallathuruthy Boat Club"],
 ["Kottappuram, Thrissur","04 October 2026","—","Winner not yet available"],
 ["Piravom, Ernakulam","17 October 2026","—","Winner not yet available"],
 ["Thazhathangadi, Kottayam","24 October 2026","—","Winner not yet available"],
