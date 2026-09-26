@@ -14,7 +14,7 @@ const champions = {
 const schedules=[
 {venue:"Karuvatta, Alappuzha",date:"2026-09-19",winner:"Aroma-I",club:"Aroma Boat Club"},
 {venue:"Kallada, Kollam",date:"2026-09-23",winner:"Aroma-I",club:"Aroma Boat Club"},
-{venue:"Pandanadu, Chengannur, Alappuzha",date:"2026-09-26",winner:"Melpadom",club:"Pallathuruthy Boat Club"},
+{venue:"Pandanadu, Chengannur, Alappuzha",date:"2026-09-26",winner:"Melpadom",club:"Pallathuruthy Boat Club(PBC)"},
 {venue:"Kottappuram, Thrissur",date:"2026-10-04",winner:"",club:""},
 {venue:"Piravom, Ernakulam",date:"2026-10-17",winner:"",club:""},
 {venue:"Thazhathangadi, Kottayam",date:"2026-10-24",winner:"",club:""},
@@ -40,7 +40,7 @@ const history={
 2026:{champion:"",club:"",matches:[
 ["Karuvatta, Alappuzha","19 September 2026","Aroma-I","Aroma Boat Club"],
 ["Kallada, Kollam","23 September 2026","Aroma-I","Aroma Boat Club"],
-["Pandanadu, Chengannur, Alappuzha","26 September 2026","Melpadom","Pallathuruthy Boat Club"],
+["Pandanadu, Chengannur, Alappuzha","26 September 2026","Melpadom","Pallathuruthy Boat Club(PBC)"],
 ["Kottappuram, Thrissur","04 October 2026","—","Winner not yet available"],
 ["Piravom, Ernakulam","17 October 2026","—","Winner not yet available"],
 ["Thazhathangadi, Kottayam","24 October 2026","—","Winner not yet available"],
