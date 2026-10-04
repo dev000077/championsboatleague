@@ -125,7 +125,7 @@ function dateOnly(iso){return new Date(iso+"T00:00:00");}
 function getStatus(iso){
 const now=new Date(), d=dateOnly(iso);
 const start=new Date(d); start.setHours(14,30,0,0);
-const end=new Date(d); end.setHours(18,0,0,0);
+const end=new Date(d); end.setHours(17,30,0,0);
 if(now>=end)return["Completed","completed"];
 if(now>=start)return["LIVE NOW","progress"];
 return["Upcoming","upcoming"];
