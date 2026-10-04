@@ -26,15 +26,15 @@ const schedules=[
 ];
 
 const points=[
-{club:"AROMA-I (Aroma Boat Club)",points:29},
-{club:"MELPADOM (Pallathuruthy Boat Club)",points:25},
-{club:"NIRANAM (Niranam Boat Club)",points:26},
-{club:"VEEYAPURAM (UBC FC Kainakary)",points:22},
-{club:"ARPOOKARA (Immanuel Boat Club)",points:15},
-{club:"CHERUTHANA (Nattakom Boat Club)",points:14},
-{club:"PUNYALALAN NIRANAM (Kumarakom Town Boat Club)",points:16},
-{club:"NADUBHAGAM (Punnamada Boat Club)",points:9},
-{club:"THALAVADI (Village Boat Club, Kainakary)",points:6}
+{club:"AROMA-I (Aroma Boat Club)",points:38},
+{club:"MELPADOM (Pallathuruthy Boat Club)",points:35},
+{club:"NIRANAM (Niranam Boat Club)",points:33},
+{club:"VEEYAPURAM (UBC FC Kainakary)",points:30},
+{club:"ARPOOKARA (Immanuel Boat Club)",points:18},
+{club:"CHERUTHANA (Nattakom Boat Club)",points:19},
+{club:"PUNYALALAN NIRANAM (Kumarakom Town Boat Club)",points:20},
+{club:"NADUBHAGAM (Punnamada Boat Club)",points:15},
+{club:"THALAVADI (Village Boat Club, Kainakary)",points:8}
 ];
 
 const history={
