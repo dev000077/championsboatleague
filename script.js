@@ -16,7 +16,7 @@ const schedules=[
 {venue:"Kallada, Kollam",date:"2026-09-23",winner:"Aroma-I",club:"Aroma Boat Club"},
 {venue:"Pandanadu, Chengannur, Alappuzha",date:"2026-09-26",winner:"Melpadom",club:"Pallathuruthy Boat Club(PBC)"},
 {venue:"Kottappuram, Thrissur",date:"2026-10-04",winner:"Melpadom",club:"Pallathuruthy Boat Club(PBC)"},
-{venue:"Marine Drive, Ernakulam",date:"2026-10-10",winner:"",club:""},
+{venue:"Marine Drive, Ernakulam",date:"2026-10-10",winner:"Melpadom",club:"Pallathuruthy Boat Club(PBC)"},
 {venue:"Piravom, Ernakulam",date:"2026-10-17",winner:"",club:""},
 {venue:"Thazhathangadi, Kottayam",date:"2026-10-24",winner:"",club:""},
 {venue:"Pulinkunnu, Alappuzha",date:"2026-10-31",winner:"",club:""},
@@ -26,15 +26,15 @@ const schedules=[
 ];
 
 const points=[
-{club:"AROMA-I (Aroma Boat Club)",points:38},
-{club:"MELPADOM (Pallathuruthy Boat Club)",points:35},
-{club:"NIRANAM (Niranam Boat Club)",points:33},
-{club:"VEEYAPURAM (UBC FC Kainakary)",points:30},
-{club:"ARPOOKARA (Immanuel Boat Club)",points:18},
-{club:"CHERUTHANA (Nattakom Boat Club)",points:19},
-{club:"PUNYALALAN NIRANAM (Kumarakom Town Boat Club)",points:20},
-{club:"NADUBHAGAM (Punnamada Boat Club)",points:15},
-{club:"THALAVADI (Village Boat Club, Kainakary)",points:8}
+{club:"AROMA-I (Aroma Boat Club)",points:45},
+{club:"MELPADOM (Pallathuruthy Boat Club)",points:45},
+{club:"NIRANAM (Niranam Boat Club)",points:37},
+{club:"VEEYAPURAM (UBC FC Kainakary)",points:39},
+{club:"ARPOOKARA (Immanuel Boat Club)",points:23},
+{club:"CHERUTHANA (Nattakom Boat Club)",points:22},
+{club:"PUNYALALAN NIRANAM (Kumarakom Town Boat Club)",points:26},
+{club:"NADUBHAGAM (Punnamada Boat Club)",points:23},
+{club:"THALAVADI (Village Boat Club, Kainakary)",points:10}
 ];
 
 const history={
@@ -43,7 +43,7 @@ const history={
 ["Kallada, Kollam","23 September 2026","Aroma-I","Aroma Boat Club"],
 ["Pandanadu, Chengannur, Alappuzha","26 September 2026","Melpadom","Pallathuruthy Boat Club(PBC)"],
 ["Kottappuram, Thrissur","04 October 2026","Melpadom","Pallathuruthy Boat Club(PBC)"],
-["Marine Drive, Ernakulam","10 October 2026","—","Winner not yet available"],
+["Marine Drive, Ernakulam","10 October 2026","Melpadom—","Pallathuruthy Boat Club(PBC)"],
 ["Piravom, Ernakulam","17 October 2026","—","Winner not yet available"],
 ["Thazhathangadi, Kottayam","24 October 2026","—","Winner not yet available"],
 ["Pulinkunnu, Alappuzha","31 October 2026","—","Winner not yet available"],
