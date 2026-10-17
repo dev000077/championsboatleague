@@ -26,15 +26,15 @@ const schedules=[
 ];
 
 const points=[
-{club:"AROMA-I (Aroma Boat Club)",points:45},
-{club:"MELPADOM (Pallathuruthy Boat Club)",points:45},
-{club:"NIRANAM (Niranam Boat Club)",points:37},
-{club:"VEEYAPURAM (UBC FC Kainakary)",points:39},
-{club:"ARPOOKARA (Immanuel Boat Club)",points:23},
-{club:"CHERUTHANA (Nattakom Boat Club)",points:22},
-{club:"PUNYALALAN NIRANAM (Kumarakom Town Boat Club)",points:26},
-{club:"NADUBHAGAM (Punnamada Boat Club)",points:23},
-{club:"THALAVADI (Village Boat Club, Kainakary)",points:10}
+{boat:"Melpadom", matches:[8,7,10,10,10]},
+{boat:"Aroma", matches:[10,10,9,9,7]},
+{boat:"Veeyapuram", matches:[7,8,7,8,9]},
+{boat:"Niranam", matches:[9,9,8,7,4]},
+{boat:"Punyalalan Niranam", matches:[4,6,6,4,6]},
+{boat:"Nadubhagom", matches:[3,3,3,6,8]},
+{boat:"Arpookkara", matches:[6,4,5,3,5]},
+{boat:"Cheruthana", matches:[5,5,4,5,3]},
+{boat:"Thalavady", matches:[2,2,2,2,2]}
 ];
 
 const history={
@@ -251,18 +251,43 @@ document.body.classList.remove("modal-open");
 }
 
 function renderPoints(){
-const body=document.getElementById("pointsBody");if(!body)return;
+const body=document.getElementById("pointsBody");
+const head=document.getElementById("pointsHead");
+if(!body)return;
 
+// A numeric score means the match has a result; null/undefined means not played or not entered.
+const matchCount=Math.max(0,...points.map(p=>p.matches.length));
+const score=(p,i)=>p.matches[i]===null||p.matches[i]===undefined||p.matches[i]===""?null:Number(p.matches[i]);
+const total=p=>p.matches.reduce((sum,value)=>{
+  if(value===null||value===undefined||value==="")return sum;
+  const n=Number(value);return Number.isFinite(n)?sum+n:sum;
+},0);
+
+// Show only the match columns present in the data. Missing scores display as — and are not counted.
+if(head){
+  head.innerHTML=`<tr><th>Pos.</th><th>Boat</th>${Array.from({length:matchCount},(_,i)=>`<th>M${i+1}</th>`).join("")}<th>Total Pts</th></tr>`;
+}
+
+// Tie-breaker: total points first, then compare match scores from the latest match backwards.
 const sortedPoints=[...points].sort((a,b)=>{
-if(b.points!==a.points)return b.points-a.points;
-return a.club.localeCompare(b.club);
+  const totalDiff=total(b)-total(a);
+  if(totalDiff!==0)return totalDiff;
+  for(let i=matchCount-1;i>=0;i--){
+    const av=score(a,i),bv=score(b,i);
+    if(av===null&&bv===null)continue;
+    if(av===null)return 1;
+    if(bv===null)return -1;
+    if(av!==bv)return bv-av;
+  }
+  return a.boat.localeCompare(b.boat);
 });
 
 body.innerHTML=sortedPoints.map((p,i)=>`
 <tr>
-<td><span class="rank">${i+1}</span></td>
-<td><strong>${p.club}</strong></td>
-<td class="pts">${p.points}</td>
+<td><span class="rank">${String(i+1).padStart(2,"0")}</span></td>
+<td><strong>${p.boat}</strong></td>
+${Array.from({length:matchCount},(_,matchIndex)=>{const value=score(p,matchIndex);return `<td class="match-pts">${value===null?"—":value}</td>`;}).join("")}
+<td class="pts">${total(p)}</td>
 </tr>`).join("");
 }
 
