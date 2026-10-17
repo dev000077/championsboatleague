@@ -17,7 +17,7 @@ const schedules=[
 {venue:"Pandanadu, Chengannur, Alappuzha",date:"2026-09-26",winner:"Melpadom",club:"Pallathuruthy Boat Club(PBC)"},
 {venue:"Kottappuram, Thrissur",date:"2026-10-04",winner:"Melpadom",club:"Pallathuruthy Boat Club(PBC)"},
 {venue:"Marine Drive, Ernakulam",date:"2026-10-10",winner:"Melpadom",club:"Pallathuruthy Boat Club(PBC)"},
-{venue:"Piravom, Ernakulam",date:"2026-10-17",winner:"",club:""},
+{venue:"Piravom, Ernakulam",date:"2026-10-17","Melpadom",club:"Pallathuruthy Boat Club(PBC)"},
 {venue:"Thazhathangadi, Kottayam",date:"2026-10-24",winner:"",club:""},
 {venue:"Pulinkunnu, Alappuzha",date:"2026-10-31",winner:"",club:""},
 {venue:"Kainakary, Alappuzha",date:"2026-11-07",winner:"",club:""},
@@ -26,8 +26,8 @@ const schedules=[
 ];
 
 const points=[
-{boat:"MELPADOM (Pallathuruthy Boat Club)", matches:[8,7,10,10,10]},
-{boat:"AROMA-I (Aroma Boat Club)", matches:[10,10,9,9,7]},
+{boat:"MELPADOM (Pallathuruthy Boat Club)", matches:[8,7,10,10,10,10]},
+{boat:"AROMA-I (Aroma Boat Club)", matches:[10,10,9,9,7,9]},
 {boat:"VEEYAPURAM (UBC FC Kainakary)", matches:[7,8,7,8,9]},
 {boat:"NIRANAM (Niranam Boat Club)", matches:[9,9,8,7,4]},
 {boat:"PUNYALALAN NIRANAM (Kumarakom Town Boat Club)", matches:[4,6,6,4,6]},
@@ -44,7 +44,7 @@ const history={
 ["Pandanadu, Chengannur, Alappuzha","26 September 2026","Melpadom","Pallathuruthy Boat Club(PBC)"],
 ["Kottappuram, Thrissur","04 October 2026","Melpadom","Pallathuruthy Boat Club(PBC)"],
 ["Marine Drive, Ernakulam","10 October 2026","Melpadom","Pallathuruthy Boat Club(PBC)"],
-["Piravom, Ernakulam","17 October 2026","—","Winner not yet available"],
+["Piravom, Ernakulam","17 October 2026","Melpadom","Pallathuruthy Boat Club(PBC)"],
 ["Thazhathangadi, Kottayam","24 October 2026","—","Winner not yet available"],
 ["Pulinkunnu, Alappuzha","31 October 2026","—","Winner not yet available"],
 ["Kainakary, Alappuzha","07 November 2026","—","Winner not yet available"],
