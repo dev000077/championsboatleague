@@ -41,7 +41,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);l
 .table-wrap table{border-collapse:separate;border-spacing:0;width:100%;min-width:760px}.table-wrap th{padding:17px 20px;background:linear-gradient(135deg,#06283d,#07587e);color:#fff;text-transform:uppercase;letter-spacing:1px;font-size:12px;text-align:left}
 .table-wrap td{padding:17px 20px;border-bottom:1px solid #e7eef3;font-size:15px;color:#203b4b}.table-wrap tbody tr:nth-child(even) td{background:#f6fafc}.table-wrap tbody tr:hover td{background:#e9f7fc}
 .rank{display:inline-flex;width:34px;height:34px;border-radius:50%;align-items:center;justify-content:center;background:linear-gradient(145deg,#e9f5f9,#dcecf2);font-weight:900;color:#16445b}
-.pts{font-size:21px!important;color:#a66f00!important;font-weight:900}.table-wrap td strong{color:#0b4662;font-weight:800}
+.pts{font-size:21px!important;color:#a66f00!important;font-weight:900}
+.table-wrap td.match-pts{text-align:center;font-weight:800;font-variant-numeric:tabular-nums;color:#28465d}.table-wrap th:nth-child(n+3){text-align:center}.table-wrap td.pts{text-align:center;white-space:nowrap}.table-wrap table{min-width:820px}.table-wrap td strong{color:#0b4662;font-weight:800}
 .cta{background:linear-gradient(120deg,var(--navy),#07587e);color:#fff;border-radius:24px;padding:35px 42px;display:flex;justify-content:space-between;align-items:center;gap:25px}.cta h2{font-family:'Playfair Display',serif;font-size:30px}.cta p{color:#c9dce6;margin-top:5px}
 footer{background:#021622;color:#a9bdc8;padding:24px 0}.footer-inner{display:flex;justify-content:space-between;font-size:13px}.footer-inner a{color:#cfe7f0;text-decoration:none;font-weight:700}
 .page-hero{padding:105px 0 85px;background:linear-gradient(120deg,#041b2d,#07587e);color:#fff}.page-hero h1{font-size:clamp(44px,6vw,72px);line-height:1;margin:14px 0}.page-hero p{color:#c9dce6;max-width:650px;font-size:18px}
@@ -84,3 +85,6 @@ body.modal-open{overflow:hidden}
 .season-hero{padding:22px;flex-direction:column}.season-stat{text-align:left}.table-wrap{border-radius:18px}.table-wrap th,.table-wrap td{padding:14px 15px}
 .result-modal{padding:32px 20px;border-radius:22px}.result-modal h2{font-size:25px}.winner-result h3{font-size:27px}
 }
+
+/* Points table guidance */
+.points-note{margin:10px 0 0;color:#587080;font-size:14px;line-height:1.6;max-width:760px}
