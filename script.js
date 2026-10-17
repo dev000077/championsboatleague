@@ -28,21 +28,22 @@ const schedules=[
 const points=[
 {boat:"MELPADOM (Pallathuruthy Boat Club)", matches:[8,7,10,10,10,10,10]},
 
+{boat:"AROMA-I (Aroma Boat Club)", matches:[10,10,9,9,7,9,9]},
 
-
-{boat:"AROMA-I (Aroma Boat Club)", matches:[10,10,9,9,7,9]},
-
-
-{boat:"MELPADOM (Pallathuruthy Boat Club)", matches:[8,7,10,10,10]},
-
-
-{boat:"AROMA-I (Aroma Boat Club)", matches:[10,10,9,9,7]},
-
-{boat:"VEEYAPURAM (UBC FC Kainakary)", matches:[7,8,7,8,9]},
+{boat:"VEEYAPURAM (UBC FC Kainakary)", matches:[7,8,7,8,9,8]},
 
 {boat:"NIRANAM (Niranam Boat Club)", matches:[9,9,8,7,4]},
 
 {boat:"PUNYALALAN NIRANAM (Kumarakom Town Boat Club)", matches:[4,6,6,4,6]},
+  {boat:"NADUBHAGAM (Punnamada Boat Club)", matches:[3,3,3,6,8]},
+
+{boat:"ARPOOKARA (Immanuel Boat Club)", matches:[6,4,5,3,5]},
+
+
+{boat:"CHERUTHANA (Nattakom Boat Club)", matches:[5,5,4,5,3]},
+
+
+{boat:"THALAVADI (Village Boat Club, Kainakary)", matches:[2,2,2,2,2]}
 ];
 
 const history={
