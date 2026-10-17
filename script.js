@@ -53,7 +53,7 @@ const history={
 ["Pandanadu, Chengannur, Alappuzha","26 September 2026","Melpadom","Pallathuruthy Boat Club(PBC)"],
 ["Kottappuram, Thrissur","04 October 2026","Melpadom","Pallathuruthy Boat Club(PBC)"],
 ["Marine Drive, Ernakulam","10 October 2026","Melpadom","Pallathuruthy Boat Club(PBC)"],
-["Piravom, Ernakulam","17 October 2026","—","Melpadom","Pallathuruthy Boat Club(PBC)"],
+["Piravom, Ernakulam","17 October 2026","Melpadom","Pallathuruthy Boat Club(PBC)"],
 ["Thazhathangadi, Kottayam","24 October 2026","—","Winner not yet available"],
 ["Pulinkunnu, Alappuzha","31 October 2026","—","Winner not yet available"],
 ["Kainakary, Alappuzha","07 November 2026","—","Winner not yet available"],
