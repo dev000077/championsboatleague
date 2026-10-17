@@ -32,18 +32,18 @@ const points=[
 
 {boat:"VEEYAPURAM (UBC FC Kainakary)", matches:[7,8,7,8,9,8]},
 
-{boat:"NIRANAM (Niranam Boat Club)", matches:[9,9,8,7,4]},
+{boat:"NIRANAM (Niranam Boat Club)", matches:[9,9,8,7,4,7]},
 
-{boat:"PUNYALALAN NIRANAM (Kumarakom Town Boat Club)", matches:[4,6,6,4,6]},
-  {boat:"NADUBHAGAM (Punnamada Boat Club)", matches:[3,3,3,6,8]},
+{boat:"PUNYALALAN NIRANAM (Kumarakom Town Boat Club)", matches:[4,6,6,4,6,4]},
+  {boat:"NADUBHAGAM (Punnamada Boat Club)", matches:[3,3,3,6,8,5]},
 
-{boat:"ARPOOKARA (Immanuel Boat Club)", matches:[6,4,5,3,5]},
-
-
-{boat:"CHERUTHANA (Nattakom Boat Club)", matches:[5,5,4,5,3]},
+{boat:"ARPOOKARA (Immanuel Boat Club)", matches:[6,4,5,3,5,3]},
 
 
-{boat:"THALAVADI (Village Boat Club, Kainakary)", matches:[2,2,2,2,2]}
+{boat:"CHERUTHANA (Nattakom Boat Club)", matches:[5,5,4,5,3,6]},
+
+
+{boat:"THALAVADI (Village Boat Club, Kainakary)", matches:[2,2,2,2,2,2]}
 ];
 
 const history={
