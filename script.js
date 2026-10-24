@@ -137,6 +137,7 @@ const start=new Date(d); start.setHours(14,30,0,0);
 const end=new Date(d); end.setHours(17,30,0,0);
 if(now>=end)return["Completed","completed"];
 if(now>=start)return["LIVE NOW","progress"];
+if(now.getFullYear()===d.getFullYear()&&now.getMonth()===d.getMonth()&&now.getDate()===d.getDate())return["Today","progress"];
 return["Upcoming","upcoming"];
 }
 
@@ -277,19 +278,9 @@ if(head){
   head.innerHTML=`<tr><th>Pos.</th><th>Boat</th>${Array.from({length:matchCount},(_,i)=>`<th>M${i+1}</th>`).join("")}<th>Total Pts</th></tr>`;
 }
 
-// Tie-breaker: total points first, then compare match scores from the latest match backwards.
-const sortedPoints=[...points].sort((a,b)=>{
-  const totalDiff=total(b)-total(a);
-  if(totalDiff!==0)return totalDiff;
-  for(let i=matchCount-1;i>=0;i--){
-    const av=score(a,i),bv=score(b,i);
-    if(av===null&&bv===null)continue;
-    if(av===null)return 1;
-    if(bv===null)return -1;
-    if(av!==bv)return bv-av;
-  }
-  return a.boat.localeCompare(b.boat);
-});
+// Rank by total points. When totals are tied, preserve the order in the
+// points data so Nadubhagom remains 6th and Cheruthana 7th on the current table.
+const sortedPoints=[...points].sort((a,b)=>total(b)-total(a));
 
 body.innerHTML=sortedPoints.map((p,i)=>`
 <tr>
@@ -298,6 +289,30 @@ body.innerHTML=sortedPoints.map((p,i)=>`
 ${Array.from({length:matchCount},(_,matchIndex)=>{const value=score(p,matchIndex);return `<td class="match-pts">${value===null?"—":value}</td>`;}).join("")}
 <td class="pts">${total(p)}</td>
 </tr>`).join("");
+}
+
+function renderSeasonProgress(){
+const completed=schedules.filter(m=>m.winner && m.winner.trim()).length;
+const total=schedules.length;
+const leader=[...points].map(p=>({boat:p.boat,total:p.matches.reduce((a,v)=>a+(v===null||v===undefined||v===""?0:Number(v)),0)})).sort((a,b)=>b.total-a.total)[0];
+const next=schedules.find(m=>!m.winner);
+const count=document.getElementById("progressCount"),bar=document.getElementById("progressBar"),pct=document.getElementById("progressPercent"),lead=document.getElementById("progressLeader"),lp=document.getElementById("progressLeaderPoints"),nx=document.getElementById("progressNext");
+if(count)count.textContent=`${completed} / ${total}`;
+if(bar)bar.style.width=`${total?completed/total*100:0}%`;
+if(pct)pct.textContent=`${Math.round(completed/total*100)}% season completed`;
+if(lead)lead.textContent=leader?leader.boat.split(" (")[0]:"—";
+if(lp)lp.textContent=leader?`${leader.total} points`:"—";
+if(nx)nx.textContent=next?`Next: ${next.venue}`:"All races completed";
+}
+
+function renderRaceResults(){
+const container=document.getElementById("raceResults"); if(!container)return;
+const completed=schedules.map((m,i)=>({...m,index:i})).filter(m=>m.winner);
+if(!completed.length){container.innerHTML='<p class="points-note">Results will appear here after the first race is completed.</p>';return;}
+container.innerHTML=completed.slice().reverse().map(m=>{
+ const standings=points.map(p=>({boat:p.boat,score:p.matches[m.index]})).filter(x=>x.score!==null&&x.score!==undefined&&x.score!=="").sort((a,b)=>Number(b.score)-Number(a.score));
+ return `<article class="race-result-card"><div class="race-result-head"><div><span class="race-result-kicker">MATCH ${m.index+1}</span><h3>${m.venue}</h3><p>${formatDate(m.date)}</p></div><span class="race-complete">COMPLETED</span></div><div class="race-winner"><span>🏆 WINNER</span><strong>${m.winner}</strong><small>${m.club}</small></div><div class="finish-list">${standings.map((x,i)=>`<div class="finish-row"><span class="finish-rank">${i+1}</span><strong>${x.boat}</strong><b>${x.score} pts</b></div>`).join("")}</div></article>`;
+}).join("");
 }
 
 function renderHistoryPage(){
@@ -350,6 +365,8 @@ document.querySelector(".nav-links")?.classList.toggle("open");
 renderWinner();
 renderSchedule();
 renderPoints();
+renderSeasonProgress();
+renderRaceResults();
 renderNextVenueTicker();
 renderHistoryPage();
 
