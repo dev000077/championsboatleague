@@ -204,7 +204,6 @@ ${hasResult ? `role="button" tabindex="0" onkeydown="if(event.key==='Enter'||eve
 <div class="match-venue">
 <span>VENUE</span>
 <h3>${m.venue}</h3>
-<p>Champions Boat League 2026</p>
 ${hasResult ? `<small class="click-hint">Click to view winner →</small>` : ""}
 </div>
 
@@ -291,19 +290,70 @@ ${Array.from({length:matchCount},(_,matchIndex)=>{const value=score(p,matchIndex
 </tr>`).join("");
 }
 
-function renderSeasonProgress(){
-const completed=schedules.filter(m=>m.winner && m.winner.trim()).length;
-const total=schedules.length;
-const leader=[...points].map(p=>({boat:p.boat,total:p.matches.reduce((a,v)=>a+(v===null||v===undefined||v===""?0:Number(v)),0)})).sort((a,b)=>b.total-a.total)[0];
-const next=schedules.find(m=>!m.winner);
-const count=document.getElementById("progressCount"),bar=document.getElementById("progressBar"),pct=document.getElementById("progressPercent"),lead=document.getElementById("progressLeader"),lp=document.getElementById("progressLeaderPoints"),nx=document.getElementById("progressNext");
-if(count)count.textContent=`${completed} / ${total}`;
-if(bar)bar.style.width=`${total?completed/total*100:0}%`;
-if(pct)pct.textContent=`${Math.round(completed/total*100)}% season completed`;
-if(lead)lead.textContent=leader?leader.boat.split(" (")[0]:"—";
-if(lp)lp.textContent=leader?`${leader.total} points`:"—";
-if(nx)nx.textContent=next?`Next: ${next.venue}`:"All races completed";
+
+function renderSeasonProgress() {
+  const now = new Date();
+
+  // A match is completed when its result is recorded or
+  // the existing scheduled end time has passed.
+  const completed = schedules.filter(m => {
+    const [status] = getStatus(m.date);
+    return Boolean(m.winner && m.winner.trim()) ||
+           status === "Completed";
+  });
+
+  const total = schedules.length;
+  const current = schedules.find(m => {
+    const [status] = getStatus(m.date);
+    return status === "Today" || status === "LIVE NOW";
+  });
+
+  const next = schedules.find(m => {
+    const [status] = getStatus(m.date);
+    return status !== "Completed" &&
+           (!m.winner || !m.winner.trim());
+  });
+
+  const leader = [...points]
+    .map(p => ({
+      boat: p.boat,
+      total: p.matches.reduce((sum, v) =>
+        sum + (v === null || v === undefined || v === ""
+          ? 0 : Number(v)), 0)
+    }))
+    .sort((a, b) => b.total - a.total)[0];
+
+  const count = document.getElementById("progressCount");
+  const bar = document.getElementById("progressBar");
+  const pct = document.getElementById("progressPercent");
+  const lead = document.getElementById("progressLeader");
+  const lp = document.getElementById("progressLeaderPoints");
+  const nx = document.getElementById("progressNext");
+
+  if (count) count.textContent = `${completed.length} / ${total}`;
+  if (bar) bar.style.width =
+    `${total ? completed.length / total * 100 : 0}%`;
+  if (pct) pct.textContent =
+    `${Math.round(total ? completed.length / total * 100 : 0)}% season completed`;
+
+  if (lead) lead.textContent = leader
+    ? leader.boat.split(" (")[0] : "—";
+  if (lp) lp.textContent = leader ? `${leader.total} points` : "—";
+
+  if (nx) {
+    if (current) {
+      const [status] = getStatus(current.date);
+      nx.textContent =
+        `${status}: Match ${schedules.indexOf(current) + 1} — ${current.venue}`;
+    } else if (next) {
+      nx.textContent =
+        `Next Match ${schedules.indexOf(next) + 1}: ${next.venue} — ${formatDate(next.date)}`;
+    } else {
+      nx.textContent = "All matches completed";
+    }
+  }
 }
+
 
 function renderRaceResults(){
 const container=document.getElementById("raceResults"); if(!container)return;
