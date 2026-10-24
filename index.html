@@ -100,7 +100,7 @@ gtag('config', 'G-FFRB1GJSM7');
 <a href="index.html">Home</a>
 <a href="#winners">Winners</a>
 <a href="history.html">Past Seasons</a>
-<a href="#schedule">Schedule</a>
+<a href="#schedule">Fixtures</a>
 <a href="#points">Points Table</a>
 </div>
 <button class="menu-btn" aria-label="Open menu">☰</button>
@@ -137,12 +137,21 @@ gtag('config', 'G-FFRB1GJSM7');
 </div>
 </section>
 
-<section id="schedule" class="section alt">
+<section id="progress" class="section season-progress-section">
 <div class="container">
-<div class="section-head">
-<div><span class="eyebrow">RACE CALENDAR</span><h2>2026 Match Schedule</h2></div>
+<div class="section-head"><div><span class="eyebrow">SEASON TRACKER</span><h2>2026 Season Progress</h2><p class="points-note">Follow completed races, the next venue and the current championship leader.</p></div></div>
+<div class="progress-panel">
+<div class="progress-top"><div><span class="progress-label">RACES COMPLETED</span><strong id="progressCount">6 / 11</strong></div><div class="progress-leader"><span>CURRENT LEADER</span><strong id="progressLeader">Melpadom</strong><small id="progressLeaderPoints">55 points</small></div></div>
+<div class="progress-track"><div id="progressBar" class="progress-fill" style="width:54.5%"></div></div>
+<div class="progress-bottom"><span id="progressPercent">55% season completed</span><span id="progressNext">Next: Thazhathangadi, Kottayam</span></div>
 </div>
-<div class="schedule-list" id="scheduleList"></div>
+</div>
+</section>
+
+<section id="results" class="section alt">
+<div class="container">
+<div class="section-head"><div><span class="eyebrow">RACE-BY-RACE</span><h2>Completed Match Results</h2><p class="points-note">Finishing order and points earned in each completed race.</p></div></div>
+<div id="raceResults" class="race-results-grid"></div>
 </div>
 </section>
 
@@ -157,6 +166,15 @@ gtag('config', 'G-FFRB1GJSM7');
 <tbody id="pointsBody"></tbody>
 </table>
 </div>
+</div>
+</section>
+
+<section id="schedule" class="section alt">
+<div class="container">
+<div class="section-head">
+<div><span class="eyebrow">RACE CALENDAR</span><h2>2026 Match Schedule</h2></div>
+</div>
+<div class="schedule-list" id="scheduleList"></div>
 </div>
 </section>
 
