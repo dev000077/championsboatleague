@@ -28,7 +28,7 @@ const schedules=[
 const points=[
 {boat:"MELPADOM (Pallathuruthy Boat Club)", matches:[8,7,10,10,10,10,9,8]},
 
-{boat:"AROMA-I (Aroma Boat Club)", matches:[10,10,9,9,7,9,10,10]},
+{boat:"AROMA-I (Aroma Boat Club)", matches:[10,10,9,9,7,9,10,11]},
 
 {boat:"VEEYAPURAM (UBC FC Kainakary)", matches:[7,8,7,8,9,8,7,9]},
 
