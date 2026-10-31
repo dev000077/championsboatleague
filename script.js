@@ -274,7 +274,7 @@ const total=p=>p.matches.reduce((sum,value)=>{
 
 // Show only the match columns present in the data. Missing scores display as — and are not counted.
 if(head){
-  head.innerHTML=`<tr><th>Pos.</th><th>Boat</th>${Array.from({length:matchCount},(_,i)=>`<th>M${i+1}</th>`).join("")}<th>Total Pts</th></tr>`;
+  head.innerHTML=`<tr><th>Pos.</th><th>Boat</th>${Array.from({length:matchCount},(_,i)=>`<th>R${i+1}</th>`).join("")}<th>Total Pts</th></tr>`;
 }
 
 // Rank by total points. When totals are tied, preserve the order in the
