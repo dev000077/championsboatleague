@@ -56,7 +56,7 @@ const history={
 ["Piravom, Ernakulam","17 October 2026","Melpadom","Pallathuruthy Boat Club(PBC)"],
 ["Thazhathangadi, Kottayam","24 October 2026","Aroma-I","Aroma Boat Club"],
 ["Pulinkunnu, Alappuzha","31 October 2026","Aroma-I","Aroma Boat Club"],
-["Kainakary, Alappuzha","07 November 2026","—","Winner not yet available"],
+["Kainakary, Alappuzha","07 November 2026","VEEYAPURAM","UBC FC Kainakary"],
 ["Kayamkulam, Alappuzha","14 November 2026","—","Winner not yet available"],
 ["President's Trophy, Kollam","21 November 2026","—","Winner not yet available"]
 ]},
