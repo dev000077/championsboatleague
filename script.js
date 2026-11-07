@@ -20,7 +20,7 @@ const schedules=[
 {venue:"Piravom, Ernakulam",date:"2026-10-17",winner:"Melpadom",club:"Pallathuruthy Boat Club(PBC)"},
 {venue:"Thazhathangadi, Kottayam",date:"2026-10-24",winner:"Aroma-I",club:"Aroma Boat Club"},
 {venue:"Pulinkunnu, Alappuzha",date:"2026-10-31",winner:"Aroma-I",club:"Aroma Boat Club"},
-{venue:"Kainakary, Alappuzha",date:"2026-11-07",winner:"",club:""},
+{venue:"Kainakary, Alappuzha",date:"2026-11-07",winner:"VEEYAPURAM",club:"UBC FC Kainakary"},
 {venue:"Kayamkulam, Alappuzha",date:"2026-11-14",winner:"",club:""},
 {venue:"President's Trophy, Kollam",date:"2026-11-21",winner:"",club:""}
 ];
