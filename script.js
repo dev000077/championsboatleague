@@ -21,29 +21,29 @@ const schedules=[
 {venue:"Thazhathangadi, Kottayam",date:"2026-10-24",winner:"Aroma-I",club:"Aroma Boat Club"},
 {venue:"Pulinkunnu, Alappuzha",date:"2026-10-31",winner:"Aroma-I",club:"Aroma Boat Club"},
 {venue:"Kainakary, Alappuzha",date:"2026-11-07",winner:"VEEYAPURAM",club:"UBC FC Kainakary"},
-{venue:"Kayamkulam, Alappuzha",date:"2026-11-14",winner:"",club:""},
+{venue:"Kayamkulam, Alappuzha",date:"2026-11-14",winner:"VEEYAPURAM",club:"UBC FC Kainakary"},
 {venue:"President's Trophy, Kollam",date:"2026-11-21",winner:"",club:""}
 ];
 
 const points=[
-{boat:"MELPADOM (Pallathuruthy Boat Club)", matches:[8,7,10,10,10,10,9,8,9]},
+{boat:"MELPADOM (Pallathuruthy Boat Club)", matches:[8,7,10,10,10,10,9,8,9,9]},
 
-{boat:"AROMA-I (Aroma Boat Club)", matches:[10,10,9,9,7,9,10,10,8]},
+{boat:"AROMA-I (Aroma Boat Club)", matches:[10,10,9,9,7,9,10,10,8,7]},
 
-{boat:"VEEYAPURAM (UBC FC Kainakary)", matches:[7,8,7,8,9,8,7,9,10]},
+{boat:"VEEYAPURAM (UBC FC Kainakary)", matches:[7,8,7,8,9,8,7,9,10,10]},
 
-{boat:"NIRANAM (Niranam Boat Club)", matches:[9,9,8,7,4,7,8,7,7]},
+{boat:"NIRANAM (Niranam Boat Club)", matches:[9,9,8,7,4,7,8,7,7,8]},
 
-{boat:"PUNYALALAN NIRANAM (Kumarakom Town Boat Club)", matches:[4,6,6,4,6,4,4,3,6]},
-  {boat:"NADUBHAGAM (Punnamada Boat Club)", matches:[3,3,3,6,8,5,3,5,5]},
+{boat:"PUNYALALAN NIRANAM (Kumarakom Town Boat Club)", matches:[4,6,6,4,6,4,4,3,6,6]},
+  {boat:"NADUBHAGAM (Punnamada Boat Club)", matches:[3,3,3,6,8,5,3,5,5,4]},
 
-{boat:"ARPOOKARA (Immanuel Boat Club)", matches:[6,4,5,3,5,3,5,4,4]},
-
-
-{boat:"CHERUTHANA (Nattakom Boat Club)", matches:[5,5,4,5,3,6,6,6,3]},
+{boat:"ARPOOKARA (Immanuel Boat Club)", matches:[6,4,5,3,5,3,5,4,4,3]},
 
 
-{boat:"THALAVADI (Village Boat Club, Kainakary)", matches:[2,2,2,2,2,2,2,2,2]}
+{boat:"CHERUTHANA (Nattakom Boat Club)", matches:[5,5,4,5,3,6,6,6,3,5]},
+
+
+{boat:"THALAVADI (Village Boat Club, Kainakary)", matches:[2,2,2,2,2,2,2,2,2,2]}
 ];
 
 const history={
@@ -57,7 +57,7 @@ const history={
 ["Thazhathangadi, Kottayam","24 October 2026","Aroma-I","Aroma Boat Club"],
 ["Pulinkunnu, Alappuzha","31 October 2026","Aroma-I","Aroma Boat Club"],
 ["Kainakary, Alappuzha","07 November 2026","VEEYAPURAM","UBC FC Kainakary"],
-["Kayamkulam, Alappuzha","14 November 2026","—","Winner not yet available"],
+["Kayamkulam, Alappuzha","14 November 2026","VEEYAPURAM","UBC FC Kainakary"],
 ["President's Trophy, Kollam","21 November 2026","—","Winner not yet available"]
 ]},
 2025:{champion:"Veeyapuram",club:"Village Boat Club Kainakary (Pride Chasers) VBC",matches:[
