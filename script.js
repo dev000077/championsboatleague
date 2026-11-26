@@ -376,7 +376,7 @@ tabs.innerHTML=Object.keys(history).sort((a,b)=>b-a).map(y=>
 
 const s=history[year];
 
-const championTitle=s.champion || "2026 Season in Completed";
+const championTitle=s.champion || "2026 Season  Completed";
 const championClub=s.club || "Match winners will be added as races are completed.";
 
 content.innerHTML=`
